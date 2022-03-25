@@ -1,9 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:GEHU/Constants.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class Admission_Screen extends StatelessWidget {
   static const String id = 'Admission Screen';
   const Admission_Screen({Key? key}) : super(key: key);
+
+  void launchURL(var url) async{
+    if(await canLaunch(url.toString()) == true)
+    {
+      await launch(url, universalLinksOnly: true);
+    }
+    else {
+      print('There was an error!');
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -130,7 +141,7 @@ class Admission_Screen extends StatelessWidget {
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsets.only(left: 5, right: 5, bottom: 10),
+                            padding: const EdgeInsets.only(left: 5, right: 5, bottom: 5),
                             child: Container(
                               color: Color(0xFF373737),
                               padding: EdgeInsets.all(5),
@@ -175,84 +186,45 @@ class Admission_Screen extends StatelessWidget {
                               ),
                             ),
                           ),
-                          ExpansionTile(
-                            collapsedBackgroundColor: Color(0xFF373737),
-                            backgroundColor: red_Color,
-                            title: Text(
-                              'Dehradun Campus',
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 15
+                          const Divider(thickness: 1.5),
+                          const Text(
+                            'Fast Track Online Fee Payment Options',
+                            style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(top: 10, bottom: 5),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Button(text: 'GEHU Dehradun\n (Paytm)', onPress: () => launchURL('http://m.p-y.tm/GraphicEraHill_DDN_web')),
+                                SizedBox(width: 10),
+                                Button(text: 'GEHU Bhimtal   \n (Paytm)', onPress: () => launchURL('http://m.p-y.tm/GraphicEraHill_web')),
+                              ],
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(top: 5, bottom: 10),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Button(text: 'HDFC Payment \n Gateway', onPress: ()=> launchURL('https://forms.eduqfix.com/geuonlineform/add')),
+                                SizedBox(width: 10),
+                                Button(text: 'Pay Using QR    ', onPress: ()=> null),
+                              ],
+                            ),
+                          ),
+                          const Padding(
+                            padding: EdgeInsets.only(bottom: 10, left: 5, right: 5),
+                            child: Flexible(
+                              child: Text(
+                                admission_fee_note,
+                                style: TextStyle(fontSize: 12),
                               ),
                             ),
-                            children: [
-                              Container(
-                                child: const Padding(
-                                  padding: EdgeInsets.only(left: 8, right: 8, top: 5, bottom: 10),
-                                  child: Text(
-                                    college_Dehradun,
-                                    textAlign: TextAlign.justify,
-                                    style: TextStyle(fontSize: 12),
-                                  ),
-                                ),
-                                color: Colors.white,
-                              ),
-                              Image.asset('Images/dehradun_campus.jpg'),
-                            ],
                           ),
-                          const SizedBox(height: 10),
-                          ExpansionTile(
-                            collapsedBackgroundColor: Color(0xFF373737),
-                            backgroundColor: red_Color,
-                            title: Text(
-                              'Bhimtal Campus',
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 15
-                              ),
-                            ),
-                            children: [
-                              Container(
-                                child: const Padding(
-                                  padding: EdgeInsets.only(left: 8, right: 8, top: 5, bottom: 10),
-                                  child: Text(
-                                    college_Bhimtal,
-                                    textAlign: TextAlign.justify,
-                                    style: TextStyle(fontSize: 12),
-                                  ),
-                                ),
-                                color: Colors.white,
-                              ),
-                              Image.asset('Images/bhimtal_campus.jpg'),
-                            ],
-                          ),
-                          const SizedBox(height: 10),
-                          ExpansionTile(
-                            collapsedBackgroundColor: const Color(0xFF373737),
-                            backgroundColor: red_Color,
-                            title: const Text(
-                              'Haldwani Campus',
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 15
-                              ),
-                            ),
-                            children: [
-                              Container(
-                                child: const Padding(
-                                  padding: EdgeInsets.only(left: 8, right: 8, top: 5, bottom: 10 ),
-                                  child: Text(
-                                    college_Haldwani,
-                                    textAlign: TextAlign.justify,
-                                    style: TextStyle(fontSize: 12),
-                                  ),
-                                ),
-                                color: Colors.white,
-                              ),
-                              Image.asset('Images/haldwani_campus.jpg'),
-                            ],
-                          ),
-                          const SizedBox(height: 10),
                         ],
                       ),
                     ),
