@@ -103,7 +103,7 @@ class _Home_ScreenState extends State<Home_Screen> {
                   flex: 1,
                   child: Padding(
                     padding: const EdgeInsets.only(left: 10, right: 5, bottom: 10),
-                    child: Button(text: 'Placement', onPress: ()=> Navigator.pushNamed(context, Placement_Screen.id)),
+                    child: Button(text: 'Placements', onPress: ()=> Navigator.pushNamed(context, Placement_Screen.id)),
                   ),
                 ),
                 Expanded(

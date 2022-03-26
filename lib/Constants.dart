@@ -14,6 +14,8 @@ const String campus_life = "The beautifully designed Graphic Era Hill University
 const String scholarship = "Graphic Era awards merit or academic scholarships to those students who do exceptionally well in academic and educational frontiers. These are directed towards acknowledging exceptional students for their achievements in the fields of academics and educational prowess.";
 const String admission_fee_note = "Note: In case of withdrawal of Admission after Full/Partial Fee Payment, the One-Time Admission charges (Inclusive of Security Amount) mentioned in the Fee Sttucture will be deducted by the University. Please note that this amount does not include Tuition Fees or Other Charges payable per semester. The One-Time Admission charges vary as per the course chosen. This quantum of deduction is valid till the commencement of the course in contention, post which the policy will be revised.";
 const String academics_description = "Graphic Era Hill University was also established under the aegis of GEES on 28 April 2011 by an act of the Uttarakhand State. Known as one of the premiere university of India, GEHU has gained recognition for its ingenious educational practices and global approach that has succeeded in nurturing an army of professionals across industries and sectors in the nation and beyond. Initially the university was set up in Dehradun and Bhimtal. But the vision to make world class education available and accessible to youth across the state propelled the establishment of another campus in Haldwani, within a mere decade.\n\nThe university offers wide range of multi disciplinary programs ranging from engineering, applied & life sciences, management, commerce, law, hospitality to animation, fashion designing, humanities journalism and mass communication in tandem with the diverse interests and aspirations of youth. The university offers scholarships and foreign internshisps to meritorious students, organizes global exchange programs, seminars by eminent scholars and periodically signs research partnerships with other universities, government and industries to broaden the mental horizons and provide impetus to achievement of personal and professional goals of its students.\n\nThe three campuses are also abound with amenities like advanced laboratories, well stocked libraries, lecture theatres, seminar halls, computer labs, radio station, wifi, cafeteria, hostel etc. that seek to enrich and smoothen the learning process of the student community. In accordance with the abiding commitment of university to create conducive and excellent educational opportunities for youth hailing from hilly areas, a concession of 25% in fee is offered to them. The university also lends its uncompromising support for community services, through its social responsibility endeavors. The state-of-the-art infrastructure, students facilities, industry centric curriculum, highly competent faculty members, research focused approach and high placement each year has made GEHU a safe haven for students who aspire to  carve their own identity in the professional world. The university has been acclaimed and honored at various events and occasions of national and international prominence which testifies to the brilliance of the education imparted in the institution.";
+const String rajat_jain = "Sunfox Founder - Rajat Jain, Student of M.Tech at Graphic Era, interacted with Hon'ble Prime Minister of India, Shri. Narendra Modi, receiving appreciation for developing the smallest ECG Machine in the world.";
+
 
 const Color red_Color = Color(0xFFF70000);
 
@@ -21,7 +23,7 @@ class Button extends StatelessWidget {
   final String text;
   final VoidCallback onPress;
 
-  Button({required this.text, required this.onPress});
+  const Button({required this.text, required this.onPress});
 
   @override
   Widget build(BuildContext context) {
@@ -42,4 +44,38 @@ class Button extends StatelessWidget {
     );
   }
 }
+
+class PDF_Button extends StatelessWidget {
+  final String text;
+  final VoidCallback onPress;
+
+  const PDF_Button({required this.text, required this.onPress});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialButton(
+      padding: const EdgeInsets.only(top: 5),
+      onPressed: onPress,
+      child: Row(
+        children: [
+          const SizedBox(width: 10),
+          Image.asset(
+            'Images/pdf.jpg',
+            height: 35,
+            width: 35,
+          ),
+          const SizedBox(width: 10),
+          Text(
+            text,
+            style: const TextStyle(
+                fontWeight: FontWeight.w600,
+                fontSize: 12
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
 

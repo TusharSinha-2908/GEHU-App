@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
         About_Screen.id : (context) => const About_Screen(),
         Admission_Screen.id: (context) => const Admission_Screen(),
         Academics_Screen.id: (context) => const Academics_Screen(),
-        Placement_Screen.id: (context) => const Placement_Screen(),
+        Placement_Screen.id: (context) => Placement_Screen(),
         Research_Screen.id: (context) => const Research_Screen(),
         International_Screen.id: (context) => const International_Screen(),
       },

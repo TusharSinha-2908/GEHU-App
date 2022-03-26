@@ -232,6 +232,7 @@ class Admission_Screen extends StatelessWidget {
                 ),
               ],
             ),
+            const SizedBox(height: 15),
             Container(
               color: red_Color,
               child: const Padding(

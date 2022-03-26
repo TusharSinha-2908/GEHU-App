@@ -84,7 +84,7 @@ class About_Screen extends StatelessWidget {
                             ),
                           ),
                           const Text(
-                            'Our Three Campuses :',
+                            'Our Three Campuses',
                             style: TextStyle(
                               fontSize: 16,
                               fontWeight: FontWeight.w500,
@@ -185,6 +185,7 @@ class About_Screen extends StatelessWidget {
                 ),
               ],
             ),
+            const SizedBox(height: 15),
             Container(
               color: red_Color,
               child: const Padding(

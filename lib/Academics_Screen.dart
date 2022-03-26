@@ -96,27 +96,23 @@ class Academics_Screen extends StatelessWidget {
                               Container(
                                 child: Padding(
                                   padding: const EdgeInsets.only(left: 8, right: 8, top: 10, bottom: 10),
-                                  child: Row(
+                                  child: Column(
                                     mainAxisAlignment: MainAxisAlignment.start,
                                     crossAxisAlignment: CrossAxisAlignment.start,
                                     children: [
-                                      Row(
-                                        children: [
-                                          const SizedBox(width: 10),
-                                          Image.asset(
-                                              'Images/pdf.jpg',
-                                              height: 35,
-                                              width: 35,
+                                      PDF_Button(
+                                          text: 'Academic Calendar January-June 2022',
+                                          onPress: ()=>{},
                                           ),
-                                          const SizedBox(width: 10),
-                                          const Text(
-                                              'January-June 2022',
-                                              style: TextStyle(
-                                                fontWeight: FontWeight.w600,
-                                                fontSize: 12
-                                              ),
-                                          ),
-                                        ],
+                                      const Divider(thickness: 1),
+                                      PDF_Button(
+                                          text: 'July-December (III Sem.) 2021-2022',
+                                          onPress: ()=>{},
+                                      ),
+                                      const Divider(thickness: 1),
+                                      PDF_Button(
+                                          text:  'July-December (V Sem.) 2021-2022',
+                                          onPress: ()=>{},
                                       ),
                                     ],
                                   ),
@@ -125,7 +121,57 @@ class Academics_Screen extends StatelessWidget {
                               ),
                             ],
                           ),
-                          const SizedBox(height: 10),
+                          const SizedBox(height: 5),
+                          const Divider(thickness: 1.5),
+                          const Text(
+                            'Courses Offered',
+                            style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(top: 10, bottom: 5, left: 5, right: 5),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Button(text: 'Engineering   ', onPress: ()=>{}),
+                                SizedBox(width: 5),
+                                Button(text: 'Computer\nApplication      ', onPress: ()=>{}),
+                                SizedBox(width: 5),
+                                Button(text: 'Management ', onPress: ()=>{}),
+                              ],
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(top: 5, bottom: 5, left: 5, right: 5),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Button(text: 'Commerce     ', onPress: ()=>{}),
+                                SizedBox(width: 5),
+                                Button(text: 'Humanities &\nSocial Science', onPress: ()=>{}),
+                                SizedBox(width: 5),
+                                Button(text: 'Pharmacy       ', onPress: ()=>{}),
+                              ],
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(top: 5, bottom: 10, left: 5, right: 5),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Button(text: 'Design            ', onPress: ()=>{}),
+                                SizedBox(width: 5),
+                                Button(text: 'Law                   ', onPress: ()=>{}),
+                                SizedBox(width: 5),
+                                Button(text: 'Agriculture     ', onPress: ()=>{}),
+                              ],
+                            ),
+                          ),
                         ],
                       ),
                     ),
@@ -133,6 +179,7 @@ class Academics_Screen extends StatelessWidget {
                 ),
               ],
             ),
+            const SizedBox(height: 15),
             Container(
               color: red_Color,
               child: const Padding(
