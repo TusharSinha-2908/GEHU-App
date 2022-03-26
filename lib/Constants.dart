@@ -23,7 +23,7 @@ class Button extends StatelessWidget {
   final String text;
   final VoidCallback onPress;
 
-  const Button({required this.text, required this.onPress});
+  Button({Key? key, required this.text, required this.onPress}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -31,14 +31,14 @@ class Button extends StatelessWidget {
       elevation: 2,
       onPressed: onPress,
       height: MediaQuery.of(context).size.height * 0.08,
-      color: Color(0xFFF70000),
+      color: const Color(0xFFF70000),
       child: Text(
         text,
         textAlign: TextAlign.center,
         style: const TextStyle(
           fontWeight: FontWeight.bold,
           color: Colors.white,
-          fontSize: 12
+          fontSize: 10.8,
         ),
       ),
     );
