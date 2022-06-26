@@ -4,11 +4,9 @@ import 'package:GEHU/Admission_Screen.dart';
 import 'package:GEHU/Constants.dart';
 import 'package:GEHU/International_Screen.dart';
 import 'package:GEHU/Placement_Screen.dart';
-import 'package:GEHU/Research_Screen.dart';
+import 'package:GEHU/Student_Area_Screen.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class Home_Screen extends StatefulWidget {
   static const String id = 'Home Screen';
@@ -21,16 +19,6 @@ class Home_Screen extends StatefulWidget {
 
 class _Home_ScreenState extends State<Home_Screen> {
 
-  void launchURL(var url) async{
-      if(await canLaunch(url.toString()) == true)
-        {
-          await launch(url, universalLinksOnly: true);
-        }
-      else {
-        print('There was an error!');
-      }
-  }
-
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -39,7 +27,25 @@ class _Home_ScreenState extends State<Home_Screen> {
         body: ListView(
           children: [
             Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
+
+                // Retireve_Image(
+                //   root: "",
+                //   image_Path: "Logo.png",
+                //   height: MediaQuery.of(context).size.height * 0.10,
+                //   width: MediaQuery.of(context).size.width * 0.75,
+                //   alignment: Alignment.bottomLeft,
+                // ),
+                //
+                // Retireve_Image(
+                //   root: "",
+                //   image_Path: "Anniversary_Logo.png",
+                //   height: MediaQuery.of(context).size.height * 0.10,
+                //   width: MediaQuery.of(context).size.width * 0.25,
+                //   alignment: Alignment.bottomRight,
+                // ),
+
                 Image.asset(
                   'Images/Logo.png',
                   width: MediaQuery.of(context).size.width * 0.75,
@@ -52,6 +58,7 @@ class _Home_ScreenState extends State<Home_Screen> {
                   width: MediaQuery.of(context).size.width * 0.25,
                   alignment: Alignment.bottomRight,
                 ),
+
               ],
             ),
             CarouselSlider(
@@ -63,6 +70,13 @@ class _Home_ScreenState extends State<Home_Screen> {
                     height: MediaQuery.of(context).size.height * 0.25,
                 ),
                 items: [
+                  // Carousel_Image(root: "", path: "bhimtal-gehu-top.jpg"),
+                  // Carousel_Image(root: "", path: "ews-courses.jpg"),
+                  // Carousel_Image(root: "", path: "btech-6-years-gehu.jpg"),
+                  // Carousel_Image(root: "", path: "MBA-GEHU.jpg"),
+                  // Carousel_Image(root: "", path: "series-online-lecture-graphic-era.jpg"),
+                  // Carousel_Image(root: "", path: "Admissions-gehu.jpg"),
+                  // Carousel_Image(root: "", path: "mba-plus-gehu.jpg"),
                   Image.asset('Images/bhimtal-gehu-top.jpg'),
                   Image.asset('Images/ews-courses.jpg'),
                   Image.asset('Images/btech-6-years-gehu.jpg'),
@@ -109,15 +123,15 @@ class _Home_ScreenState extends State<Home_Screen> {
                 Expanded(
                   flex: 1,
                   child: Padding(
-                    padding: const EdgeInsets.only(left: 5, right: 5, bottom: 10),
-                    child: Button(text: 'Research', onPress: ()=> Navigator.pushNamed(context, Research_Screen.id)),
+                    padding:const EdgeInsets.only(left: 5, right: 5, bottom: 10),
+                    child: Button(text: 'International', onPress: ()=> Navigator.pushNamed(context, International_Screen.id)),
                   ),
                 ),
                 Expanded(
                   flex: 1,
                   child: Padding(
-                    padding:const EdgeInsets.only(left: 5, right: 10, bottom: 10),
-                    child: Button(text: 'International', onPress: ()=> Navigator.pushNamed(context, International_Screen.id)),
+                    padding: const EdgeInsets.only(left: 5, right: 10, bottom: 10),
+                    child: Button(text: 'Student Area', onPress: ()=> Navigator.pushNamed(context, Student_Area_Screen.id)),
                   ),
                 ),
               ],

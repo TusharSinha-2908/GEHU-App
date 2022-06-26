@@ -37,6 +37,8 @@ dependencies:
   carousel_slider: ^4.0.0
   url_launcher: ^6.0.20
   youtube_player_flutter: ^8.0.0
+  firebase_storage: ^10.2.18
+  firebase_core: ^1.18.0
 
 dev_dependencies:
   flutter_test:
@@ -64,6 +66,7 @@ flutter:
   assets:
     - Images/
     - Images/Placements/
+    - Images/International/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

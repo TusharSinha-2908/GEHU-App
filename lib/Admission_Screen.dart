@@ -143,8 +143,8 @@ class Admission_Screen extends StatelessWidget {
                           Padding(
                             padding: const EdgeInsets.only(left: 5, right: 5, bottom: 5),
                             child: Container(
-                              color: Color(0xFF373737),
-                              padding: EdgeInsets.all(5),
+                              color: const Color(0xFF373737),
+                              padding: const EdgeInsets.all(5),
                               child: Row(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
@@ -200,7 +200,7 @@ class Admission_Screen extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Button(text: 'GEHU Dehradun\n (Paytm)', onPress: () => launchURL('http://m.p-y.tm/GraphicEraHill_DDN_web')),
-                                SizedBox(width: 10),
+                                const SizedBox(width: 10),
                                 Button(text: 'GEHU Bhimtal   \n (Paytm)', onPress: () => launchURL('http://m.p-y.tm/GraphicEraHill_web')),
                               ],
                             ),
@@ -211,7 +211,7 @@ class Admission_Screen extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Button(text: 'HDFC Payment \n Gateway', onPress: ()=> launchURL('https://forms.eduqfix.com/geuonlineform/add')),
-                                SizedBox(width: 10),
+                                const SizedBox(width: 10),
                                 Button(text: 'Pay Using QR    ', onPress: ()=> null),
                               ],
                             ),
@@ -235,17 +235,82 @@ class Admission_Screen extends StatelessWidget {
             const SizedBox(height: 15),
             Container(
               color: red_Color,
-              child: const Padding(
-                padding: EdgeInsets.only(top: 10, bottom: 10),
-                child: Text(
-                  'Graphic Era Hill University © 2022',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 10,
-                    fontWeight: FontWeight.w600,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(5.0),
+                    child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          GestureDetector(
+                            onTap: ()=> launchURL('https://www.facebook.com/gehu.official/'),
+                            child: Image.asset(
+                              'Images/facebook.png',
+                              color: Colors.white,
+                              scale: 25,
+                            ),
+                          ),
+                          const SizedBox(width: 10),
+                          GestureDetector(
+                            onTap: ()=> launchURL('https://twitter.com/graphicerahill1'),
+                            child: Image.asset(
+                              'Images/twitter.png',
+                              color: Colors.white,
+                              scale: 25,
+                            ),
+                          ),
+                          const SizedBox(width: 10),
+                          GestureDetector(
+                            onTap: ()=> launchURL('https://www.linkedin.com/company/graphic-era-hilluniversity'),
+                            child: Image.asset(
+                              'Images/linkedin.png',
+                              color: Colors.white,
+                              scale: 25,
+                            ),
+                          ),
+                          const SizedBox(width: 15),
+                          GestureDetector(
+                            onTap: ()=> launchURL('https://www.youtube.com/GEHUDehradun'),
+                            child: Image.asset(
+                              'Images/youtube.png',
+                              color: Colors.white,
+                              scale: 25,
+                            ),
+                          ),
+                          const SizedBox(width: 15),
+                          GestureDetector(
+                            onTap: ()=> launchURL('https://www.instagram.com/graphicerahilluniversity/'),
+                            child: Image.asset(
+                              'Images/instagram.png',
+                              color: Colors.white,
+                              scale: 25,
+                            ),
+                          ),
+                          const SizedBox(width: 15),
+                          GestureDetector(
+                            onTap: ()=> launchURL('https://api.whatsapp.com/send?phone=+917617770113'),
+                            child: Image.asset(
+                              'Images/whatsapp.png',
+                              color: Colors.white,
+                              scale: 25,
+                            ),
+                          ),
+                        ]
+                    ),
                   ),
-                ),
+                  const Padding(
+                    padding: EdgeInsets.all(5.0),
+                    child: Text(
+                      'Graphic Era Hill University © 2022',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 8,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ),
           ],

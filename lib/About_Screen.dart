@@ -1,6 +1,5 @@
 import 'package:GEHU/Constants.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class About_Screen extends StatelessWidget {
   static const String id = 'About Screen';
@@ -101,9 +100,9 @@ class About_Screen extends StatelessWidget {
                             ),
                           ),
                           ExpansionTile(
-                            collapsedBackgroundColor: Color(0xFF373737),
+                            collapsedBackgroundColor: const Color(0xFF373737),
                             backgroundColor: red_Color,
-                            title: Text(
+                            title: const Text(
                                 'Dehradun Campus',
                                 style: TextStyle(
                                   color: Colors.white,
@@ -127,9 +126,9 @@ class About_Screen extends StatelessWidget {
                           ),
                           const SizedBox(height: 10),
                           ExpansionTile(
-                            collapsedBackgroundColor: Color(0xFF373737),
+                            collapsedBackgroundColor: const Color(0xFF373737),
                             backgroundColor: red_Color,
-                            title: Text(
+                            title: const Text(
                               'Bhimtal Campus',
                               style: TextStyle(
                                   color: Colors.white,
@@ -188,17 +187,82 @@ class About_Screen extends StatelessWidget {
             const SizedBox(height: 15),
             Container(
               color: red_Color,
-              child: const Padding(
-                padding: EdgeInsets.only(top: 10, bottom: 10),
-                child: Text(
-                  'Graphic Era Hill University © 2022',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 10,
-                    fontWeight: FontWeight.w600,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(5.0),
+                    child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          GestureDetector(
+                            onTap: ()=> launchURL('https://www.facebook.com/gehu.official/'),
+                            child: Image.asset(
+                              'Images/facebook.png',
+                              color: Colors.white,
+                              scale: 25,
+                            ),
+                          ),
+                          const SizedBox(width: 10),
+                          GestureDetector(
+                            onTap: ()=> launchURL('https://twitter.com/graphicerahill1'),
+                            child: Image.asset(
+                              'Images/twitter.png',
+                              color: Colors.white,
+                              scale: 25,
+                            ),
+                          ),
+                          const SizedBox(width: 10),
+                          GestureDetector(
+                            onTap: ()=> launchURL('https://www.linkedin.com/company/graphic-era-hilluniversity'),
+                            child: Image.asset(
+                              'Images/linkedin.png',
+                              color: Colors.white,
+                              scale: 25,
+                            ),
+                          ),
+                          const SizedBox(width: 15),
+                          GestureDetector(
+                            onTap: ()=> launchURL('https://www.youtube.com/GEHUDehradun'),
+                            child: Image.asset(
+                              'Images/youtube.png',
+                              color: Colors.white,
+                              scale: 25,
+                            ),
+                          ),
+                          const SizedBox(width: 15),
+                          GestureDetector(
+                            onTap: ()=> launchURL('https://www.instagram.com/graphicerahilluniversity/'),
+                            child: Image.asset(
+                              'Images/instagram.png',
+                              color: Colors.white,
+                              scale: 25,
+                            ),
+                          ),
+                          const SizedBox(width: 15),
+                          GestureDetector(
+                            onTap: ()=> launchURL('https://api.whatsapp.com/send?phone=+917617770113'),
+                            child: Image.asset(
+                              'Images/whatsapp.png',
+                              color: Colors.white,
+                              scale: 25,
+                            ),
+                          ),
+                        ]
+                    ),
                   ),
-                ),
+                  const Padding(
+                    padding: EdgeInsets.all(5.0),
+                    child: Text(
+                      'Graphic Era Hill University © 2022',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 8,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ),
           ],
