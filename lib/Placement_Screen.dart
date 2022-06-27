@@ -129,11 +129,9 @@ class _Placement_ScreenState extends State<Placement_Screen> {
                           Image.asset('Images/Placements/sunfox.jpg'),
                           const Padding(
                             padding: EdgeInsets.only(left: 5,right: 5,top: 5,bottom: 10),
-                            child: Flexible(
-                              child: Text(
-                                rajat_jain + "\n\nHere's a video of the interaction.",
-                                style: TextStyle(fontSize: 11),
-                              ),
+                            child: Text(
+                              rajat_jain + "\n\nHere's a video of the interaction.",
+                              style: TextStyle(fontSize: 11),
                             ),
                           ),
                           YoutubePlayer(
@@ -154,13 +152,11 @@ class _Placement_ScreenState extends State<Placement_Screen> {
                           const SizedBox(height: 5),
                           const Padding(
                             padding: EdgeInsets.only(left: 5,right: 5),
-                            child: Flexible(
-                              child: Text(
-                               "Corporates may reach out to us at the email provided, for all Internship related offers/details/queries: internships@gehu.ac.in",
-                                style: TextStyle(
-                                    fontSize: 10,
-                                    fontWeight: FontWeight.bold,
-                                ),
+                            child: Text(
+                             "Corporates may reach out to us at the email provided, for all Internship related offers/details/queries: internships@gehu.ac.in",
+                              style: TextStyle(
+                                  fontSize: 10,
+                                  fontWeight: FontWeight.bold,
                               ),
                             ),
                           ),

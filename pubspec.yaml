@@ -39,6 +39,9 @@ dependencies:
   youtube_player_flutter: ^8.0.0
   firebase_storage: ^10.2.18
   firebase_core: ^1.18.0
+  path_provider: ^2.0.11
+  image_downloader: ^0.31.0
+  fluttertoast: ^8.0.9
 
 dev_dependencies:
   flutter_test:

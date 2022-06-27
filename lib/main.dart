@@ -4,6 +4,8 @@ import 'package:GEHU/Admission_Screen.dart';
 import 'package:GEHU/Home_Screen.dart';
 import 'package:GEHU/International_Screen.dart';
 import 'package:GEHU/Placement_Screen.dart';
+import 'package:GEHU/QR_Code.dart';
+import 'package:GEHU/Splash_Screen.dart';
 import 'package:GEHU/Student_Area_Screen.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -22,8 +24,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: const Home_Screen(),
-      initialRoute: Home_Screen.id,
+      home: const Splash_Screen(),
+      initialRoute: Splash_Screen.id,
       routes: {
         Home_Screen.id : (context) => const Home_Screen(),
         About_Screen.id : (context) => const About_Screen(),
@@ -32,6 +34,8 @@ class MyApp extends StatelessWidget {
         Placement_Screen.id: (context) => const Placement_Screen(),
         Student_Area_Screen.id: (context) => const Student_Area_Screen(),
         International_Screen.id: (context) => const International_Screen(),
+        QR_Code.id : (context) => const QR_Code(),
+        Splash_Screen.id : (context) => const Splash_Screen(),
       },
     );
   }

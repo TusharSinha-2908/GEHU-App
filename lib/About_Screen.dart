@@ -75,11 +75,9 @@ class About_Screen extends StatelessWidget {
                           const Divider(thickness: 1.5),
                           const Padding(
                             padding: EdgeInsets.only(bottom: 15),
-                            child: Flexible(
-                                child: Text(
-                                    college_About,
-                                    style: TextStyle(fontSize: 12),
-                                ),
+                            child: Text(
+                                college_About,
+                                style: TextStyle(fontSize: 12),
                             ),
                           ),
                           const Text(
@@ -92,11 +90,9 @@ class About_Screen extends StatelessWidget {
                           const Divider(thickness: 1.5),
                           const Padding(
                             padding: EdgeInsets.only(bottom: 10),
-                            child: Flexible(
-                              child: Text(
-                                college_Campus,
-                                style: TextStyle(fontSize: 12),
-                              ),
+                            child: Text(
+                              college_Campus,
+                              style: TextStyle(fontSize: 12),
                             ),
                           ),
                           ExpansionTile(

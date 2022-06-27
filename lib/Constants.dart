@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:image_downloader/image_downloader.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 const String college_Info = 'The Graphic Era Educational Society, established in 1993, is a non-profit organization that aims to mobilize world class education and generate resources for providing and supporting quality education for all. The society recognizes the right of every individual to lead a life of dignity and self-respect in a just and equitable manner. At the initial phase Graphic Era Society established in 1997 Graphic Era Institute of Technology. Graphic Era Institute of Technology had the distinction of being first Self- financed educational institute in North India, offer engineering courses The Institute was the culmination of the dream of its visionary founder Prof. (Dr) Kamal Ghanshala to change the destiny of thousands of youth by providing an excellent and holistic professional education. He had visualized an educational hub that would cater to academic aspirations of innumerable young man and women and his vision took a concrete shape in the form of Graphic Era Institute.';
@@ -33,6 +35,29 @@ void launchURL(var url) async{
     print('There was an error!');
   }
 }
+
+
+Future<bool>saveImage(String url) async
+{
+    try {
+      var imageId = await ImageDownloader.downloadImage(url);
+      if(imageId == null){
+        print("Error During Download");
+        return false;
+      }
+
+      else{
+        print("Saved Successfully!");
+        return true;
+      }
+    }
+    on PlatformException catch (error) {
+      print(error);
+    }
+
+    return false;
+}
+
 
 class Button extends StatelessWidget {
   final String text;

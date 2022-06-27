@@ -1,5 +1,4 @@
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:GEHU/Constants.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
@@ -94,11 +93,9 @@ class _International_ScreenState extends State<International_Screen> {
                           const Divider(thickness: 1.5),
                           const Padding(
                             padding: EdgeInsets.only(bottom: 15),
-                            child: Flexible(
-                              child: Text(
-                                international_description,
-                                style: TextStyle(fontSize: 12),
-                              ),
+                            child: Text(
+                              international_description,
+                              style: TextStyle(fontSize: 12),
                             ),
                           ),
                           YoutubePlayer(
@@ -116,11 +113,9 @@ class _International_ScreenState extends State<International_Screen> {
                           const Divider(thickness: 1.5),
                           const Padding(
                             padding: EdgeInsets.only(top: 5),
-                            child: Flexible(
-                              child: Text(
-                                international_internship,
-                                style: TextStyle(fontSize: 12),
-                              ),
+                            child: Text(
+                              international_internship,
+                              style: TextStyle(fontSize: 12),
                             ),
                           ),
                           CarouselSlider(
@@ -155,24 +150,22 @@ class _International_ScreenState extends State<International_Screen> {
                           const Divider(thickness: 1.5),
                           Padding(
                             padding: const EdgeInsets.only(top: 5),
-                            child: Flexible(
-                              child: RichText(
-                                  text: const TextSpan(
-                                    style: TextStyle(
-                                      color: Colors.black,
-                                      fontSize: 12,
-                                    ),
-                                    children: [
-                                      TextSpan(text: research_collab_1, style: TextStyle(fontWeight: FontWeight.w500)),
-                                      TextSpan(text: research_collab_2),
-                                      TextSpan(text: "You can visit their website for more information : "),
-                                    ]
+                            child: RichText(
+                                text: const TextSpan(
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 12,
                                   ),
-                              )
+                                  children: [
+                                    TextSpan(text: research_collab_1, style: TextStyle(fontWeight: FontWeight.w500)),
+                                    TextSpan(text: research_collab_2),
+                                    TextSpan(text: "You can visit their website for more information : "),
+                                  ]
+                                ),
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsets.only(bottom: 10),
+                            padding: const EdgeInsets.only(bottom: 10),
                             child: GestureDetector(
                               child: const Text(
                                 "https://www.col.org/",

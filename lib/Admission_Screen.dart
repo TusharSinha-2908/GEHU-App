@@ -1,20 +1,10 @@
+import 'package:GEHU/QR_Code.dart';
 import 'package:flutter/material.dart';
 import 'package:GEHU/Constants.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class Admission_Screen extends StatelessWidget {
   static const String id = 'Admission Screen';
   const Admission_Screen({Key? key}) : super(key: key);
-
-  void launchURL(var url) async{
-    if(await canLaunch(url.toString()) == true)
-    {
-      await launch(url, universalLinksOnly: true);
-    }
-    else {
-      print('There was an error!');
-    }
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -95,11 +85,9 @@ class Admission_Screen extends StatelessWidget {
                           ),
                           const Padding(
                             padding: EdgeInsets.only(bottom: 5, top: 5),
-                            child: Flexible(
-                              child: Text(
-                                facilities,
-                                style: TextStyle(fontSize: 12),
-                              ),
+                            child: Text(
+                              facilities,
+                              style: TextStyle(fontSize: 12),
                             ),
                           ),
                           const Divider(thickness: 1.5),
@@ -114,11 +102,9 @@ class Admission_Screen extends StatelessWidget {
                           ),
                           const Padding(
                             padding: EdgeInsets.only(bottom: 5, top: 5),
-                            child: Flexible(
-                              child: Text(
-                                success_stories,
-                                style: TextStyle(fontSize: 12),
-                              ),
+                            child: Text(
+                              success_stories,
+                              style: TextStyle(fontSize: 12),
                             ),
                           ),
                           const Divider(thickness: 1.5),
@@ -133,11 +119,9 @@ class Admission_Screen extends StatelessWidget {
                           ),
                           const Padding(
                             padding: EdgeInsets.only(bottom: 10, top: 5),
-                            child: Flexible(
-                              child: Text(
-                              campus_life,
-                                style: TextStyle(fontSize: 12),
-                              ),
+                            child: Text(
+                            campus_life,
+                              style: TextStyle(fontSize: 12),
                             ),
                           ),
                           Padding(
@@ -160,6 +144,7 @@ class Admission_Screen extends StatelessWidget {
                                   ),
                                   const SizedBox(width: 10),
                                   Flexible(
+                                    flex: 1,
                                     child: Column(
                                       crossAxisAlignment: CrossAxisAlignment.start,
                                       children: const [
@@ -212,17 +197,15 @@ class Admission_Screen extends StatelessWidget {
                               children: [
                                 Button(text: 'HDFC Payment \n Gateway', onPress: ()=> launchURL('https://forms.eduqfix.com/geuonlineform/add')),
                                 const SizedBox(width: 10),
-                                Button(text: 'Pay Using QR    ', onPress: ()=> null),
+                                Button(text: 'Pay Using QR    ', onPress: ()=> Navigator.pushNamed(context, QR_Code.id) ),
                               ],
                             ),
                           ),
                           const Padding(
                             padding: EdgeInsets.only(bottom: 10, left: 5, right: 5),
-                            child: Flexible(
-                              child: Text(
-                                admission_fee_note,
-                                style: TextStyle(fontSize: 12),
-                              ),
+                            child: Text(
+                              admission_fee_note,
+                              style: TextStyle(fontSize: 12),
                             ),
                           ),
                         ],

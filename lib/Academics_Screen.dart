@@ -75,11 +75,9 @@ class Academics_Screen extends StatelessWidget {
                           const Divider(thickness: 1.5),
                           const Padding(
                             padding: EdgeInsets.only(bottom: 10),
-                            child: Flexible(
-                              child: Text(
-                                academics_description,
-                                style: TextStyle(fontSize: 12),
-                              ),
+                            child: Text(
+                              academics_description,
+                              style: TextStyle(fontSize: 12),
                             ),
                           ),
                           ExpansionTile(
