@@ -8,6 +8,8 @@ import 'package:GEHU/Student_Area_Screen.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
+import 'Firebase Storage/Image_Constants.dart';
+
 class Home_Screen extends StatefulWidget {
   static const String id = 'Home Screen';
 
@@ -69,21 +71,25 @@ class _Home_ScreenState extends State<Home_Screen> {
                     autoPlayInterval: const Duration(seconds: 5),
                     height: MediaQuery.of(context).size.height * 0.25,
                 ),
-                items: [
-                  // Carousel_Image(root: "", path: "bhimtal-gehu-top.jpg"),
-                  // Carousel_Image(root: "", path: "ews-courses.jpg"),
-                  // Carousel_Image(root: "", path: "btech-6-years-gehu.jpg"),
-                  // Carousel_Image(root: "", path: "MBA-GEHU.jpg"),
-                  // Carousel_Image(root: "", path: "series-online-lecture-graphic-era.jpg"),
-                  // Carousel_Image(root: "", path: "Admissions-gehu.jpg"),
-                  // Carousel_Image(root: "", path: "mba-plus-gehu.jpg"),
-                  Image.asset('Images/bhimtal-gehu-top.jpg'),
-                  Image.asset('Images/ews-courses.jpg'),
-                  Image.asset('Images/btech-6-years-gehu.jpg'),
-                  Image.asset('Images/MBA-GEHU.jpg'),
-                  Image.asset('Images/series-online-lecture-graphic-era.jpg'),
-                  Image.asset('Images/ews-courses.jpg'),
-                  Image.asset('Images/Admissions-gehu.jpg'),
+                items: const [
+
+                  //CachedNetworkImage(imageUrl: "https://firebasestorage.googleapis.com/v0/b/gehu-67835.appspot.com/o/bhimtal-gehu-top.jpg?alt=media&token=c860afd3-f7ce-41f6-a62f-4411a0944046"),
+
+                  //Image.asset('Images/bhimtal-gehu-top.jpg'),
+                  //Image.asset('Images/ews-courses.jpg'),
+                  //Image.asset('Images/btech-6-years-gehu.jpg'),
+                  // Image.asset('Images/MBA-GEHU.jpg'),
+                  //Image.asset('Images/series-online-lecture-graphic-era.jpg'),
+                  //Image.asset('Images/ews-courses.jpg'),
+                  //Image.asset('Images/Admissions-gehu.jpg'),
+
+                  Get_Image(root: "", path: "bhimtal-gehu-top.jpg"),
+                  Get_Image(root: "", path: "ews-courses.jpg"),
+                  Get_Image(root: "", path: "btech-6-years-gehu.jpg"),
+                  Get_Image(root: "", path: "MBA-GEHU.jpg"),
+                  Get_Image(root: "", path: "series-online-lecture-graphic-era.jpg"),
+                  Get_Image(root: "", path: "ews-courses.jpg"),
+                  Get_Image(root: "", path: "Admissions-gehu.jpg"),
                 ],
             ),
             Row(
@@ -136,7 +142,8 @@ class _Home_ScreenState extends State<Home_Screen> {
                 ),
               ],
             ),
-            Image.asset('Images/graphic-era-almuni.jpg'),
+            // Image.asset('Images/graphic-era-almuni.jpg'),
+            const Get_Image(root: "", path: "graphic-era-almuni.jpg"),
             Container(
               color: const Color(0xff373737),
               child: Column(

@@ -1,4 +1,5 @@
 import 'package:GEHU/Constants.dart';
+import 'package:GEHU/Firebase%20Storage/Image_Constants.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
@@ -47,7 +48,8 @@ class QR_Code extends StatelessWidget {
       ),
       body: Column(
         children: [
-          Image.asset('Images/gehu-qr-code.png'),
+          //Image.asset('Images/gehu-qr-code.png'),
+          const Get_Image(root: "", path: 'gehu-qr-code.png'),
           Expanded(child: Container()),
           Container(
             color: red_Color,

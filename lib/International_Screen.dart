@@ -3,6 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:GEHU/Constants.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
+import 'Bottom_Bar.dart';
+import 'Firebase Storage/Image_Constants.dart';
+
 class International_Screen extends StatefulWidget {
   static const String id = 'International Screen';
   const International_Screen({Key? key}) : super(key: key);
@@ -52,7 +55,8 @@ class _International_ScreenState extends State<International_Screen> {
             Stack(
               alignment: AlignmentDirectional.topStart,
               children: [
-                Image.asset('Images/international.jpg'),
+                //Image.asset('Images/international.jpg'),
+                const Get_Image(root: "", path: "international.jpg"),
                 Padding(
                   padding: const EdgeInsets.only(left: 15, right: 15, top: 105),
                   child: Container(
@@ -114,7 +118,7 @@ class _International_ScreenState extends State<International_Screen> {
                           const Padding(
                             padding: EdgeInsets.only(top: 5),
                             child: Text(
-                              international_internship,
+                              international_internship + " :",
                               style: TextStyle(fontSize: 12),
                             ),
                           ),
@@ -126,18 +130,18 @@ class _International_ScreenState extends State<International_Screen> {
                               autoPlayInterval: const Duration(seconds: 5),
                               height: MediaQuery.of(context).size.height * 0.20
                             ),
-                            items: [
-                              // Carousel_Image(root: "", path: "bhimtal-gehu-top.jpg"),
-                              // Carousel_Image(root: "", path: "ews-courses.jpg"),
-                              // Carousel_Image(root: "", path: "btech-6-years-gehu.jpg"),
-                              // Carousel_Image(root: "", path: "MBA-GEHU.jpg"),
-                              // Carousel_Image(root: "", path: "series-online-lecture-graphic-era.jpg"),
-                              // Carousel_Image(root: "", path: "Admissions-gehu.jpg"),
-                              // Carousel_Image(root: "", path: "mba-plus-gehu.jpg"),
-                              Image.asset('Images/International/International_Interns_1.jpg'),
-                              Image.asset('Images/International/International_Interns_2.jpg'),
-                              Image.asset('Images/International/International_Interns_3.jpg'),
-                              Image.asset('Images/International/International_Interns_4.jpg'),
+                            items: const [
+
+                              // Image.asset('Images/International/International_Interns_1.jpg'),
+                              // Image.asset('Images/International/International_Interns_2.jpg'),
+                              // Image.asset('Images/International/International_Interns_3.jpg'),
+                              // Image.asset('Images/International/International_Interns_4.jpg'),
+
+                              Get_Image(root: "International", path: "International_Interns_1.jpg"),
+                              Get_Image(root: "International", path: "International_Interns_2.jpg"),
+                              Get_Image(root: "International", path: "International_Interns_3.jpg"),
+                              Get_Image(root: "International", path: "International_Interns_4.jpg"),
+
                             ],
                           ),
                           const Text(
@@ -182,86 +186,7 @@ class _International_ScreenState extends State<International_Screen> {
               ],
             ),
             const SizedBox(height: 15),
-            Container(
-              color: red_Color,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.all(5.0),
-                    child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          GestureDetector(
-                            onTap: ()=> launchURL('https://www.facebook.com/gehu.official/'),
-                            child: Image.asset(
-                              'Images/facebook.png',
-                              color: Colors.white,
-                              scale: 25,
-                            ),
-                          ),
-                          const SizedBox(width: 10),
-                          GestureDetector(
-                            onTap: ()=> launchURL('https://twitter.com/graphicerahill1'),
-                            child: Image.asset(
-                              'Images/twitter.png',
-                              color: Colors.white,
-                              scale: 25,
-                            ),
-                          ),
-                          const SizedBox(width: 10),
-                          GestureDetector(
-                            onTap: ()=> launchURL('https://www.linkedin.com/company/graphic-era-hilluniversity'),
-                            child: Image.asset(
-                              'Images/linkedin.png',
-                              color: Colors.white,
-                              scale: 25,
-                            ),
-                          ),
-                          const SizedBox(width: 15),
-                          GestureDetector(
-                            onTap: ()=> launchURL('https://www.youtube.com/GEHUDehradun'),
-                            child: Image.asset(
-                              'Images/youtube.png',
-                              color: Colors.white,
-                              scale: 25,
-                            ),
-                          ),
-                          const SizedBox(width: 15),
-                          GestureDetector(
-                            onTap: ()=> launchURL('https://www.instagram.com/graphicerahilluniversity/'),
-                            child: Image.asset(
-                              'Images/instagram.png',
-                              color: Colors.white,
-                              scale: 25,
-                            ),
-                          ),
-                          const SizedBox(width: 15),
-                          GestureDetector(
-                            onTap: ()=> launchURL('https://api.whatsapp.com/send?phone=+917617770113'),
-                            child: Image.asset(
-                              'Images/whatsapp.png',
-                              color: Colors.white,
-                              scale: 25,
-                            ),
-                          ),
-                        ]
-                    ),
-                  ),
-                  const Padding(
-                    padding: EdgeInsets.all(5.0),
-                    child: Text(
-                      'Graphic Era Hill University © 2022',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 8,
-                        fontWeight: FontWeight.w600,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
+            const Bottom_Bar(),
           ],
         ),
       ),

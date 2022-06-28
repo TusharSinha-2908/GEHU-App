@@ -1,13 +1,14 @@
 import 'package:GEHU/Firebase Storage/Firebase_Storage.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
-class Retireve_Image extends StatelessWidget {
+class Retrieve_Image extends StatelessWidget {
   final String root;
   final String image_Path;
   final double width, height;
   final Alignment alignment;
 
-  const Retireve_Image({required this.root, required this.image_Path, required this.height, required this.width, required this.alignment});
+  const Retrieve_Image({required this.root, required this.image_Path, required this.height, required this.width, required this.alignment});
 
   @override
   Widget build(BuildContext context) {
@@ -23,21 +24,19 @@ class Retireve_Image extends StatelessWidget {
           //   child: Image.network(snapshot.data! , fit: BoxFit.cover),
           // );
 
-          return Image.network(
-            snapshot.data.toString(),
-            height: height,
-            width: width,
-            fit: BoxFit.contain,
+          return CachedNetworkImage(
+            imageUrl: snapshot.data.toString(),
+            progressIndicatorBuilder: (context, url, downloadProgress) =>
+                Center(child: SizedBox(height: 30, width: 30, child: CircularProgressIndicator(value: downloadProgress.progress))),
+            errorWidget: (context, url, error) => const Icon(Icons.error),
           );
         }
         if(snapshot.connectionState == ConnectionState.waiting || !snapshot.hasData)
         {
-          return const CircularProgressIndicator();
+          return const Center(child: SizedBox(height: 30, width: 30, child: CircularProgressIndicator()));
         }
-        return Container();
+        return Center(child: Container());
       },
     );
   }
 }
-
-

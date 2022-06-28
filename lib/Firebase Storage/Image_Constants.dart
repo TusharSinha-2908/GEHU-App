@@ -1,16 +1,15 @@
 import 'package:flutter/material.dart';
-
 import 'Retrieve_Image.dart';
 
-class Carousel_Image extends StatelessWidget {
+class Get_Image extends StatelessWidget {
   final String root;
   final String path;
 
-  const Carousel_Image({required this.root, required this.path});
+  const Get_Image({required this.root, required this.path});
 
   @override
   Widget build(BuildContext context) {
-    return Retireve_Image(
+    return Retrieve_Image(
       root: root,
       image_Path: path,
       height: MediaQuery.of(context).size.height * 0.25,

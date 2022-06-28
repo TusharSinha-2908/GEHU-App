@@ -2,6 +2,9 @@ import 'package:GEHU/QR_Code.dart';
 import 'package:flutter/material.dart';
 import 'package:GEHU/Constants.dart';
 
+import 'Bottom_Bar.dart';
+import 'Firebase Storage/Image_Constants.dart';
+
 class Admission_Screen extends StatelessWidget {
   static const String id = 'Admission Screen';
   const Admission_Screen({Key? key}) : super(key: key);
@@ -35,7 +38,8 @@ class Admission_Screen extends StatelessWidget {
             Stack(
               alignment: AlignmentDirectional.topStart,
               children: [
-                Image.asset('Images/admissions.jpg'),
+                // Image.asset('Images/admissions.jpg'),
+                const Get_Image(root: "", path: "admissions.jpg"),
                 Padding(
                   padding: const EdgeInsets.only(left: 15, right: 15, top: 105),
                   child: Container(
@@ -74,7 +78,8 @@ class Admission_Screen extends StatelessWidget {
                             ),
                           ),
                           const Divider(thickness: 1.5),
-                          Image.asset('Images/hostel.jpg'),
+                          // Image.asset('Images/hostel.jpg'),
+                          const Get_Image(root: "", path: "hostel.jpg"),
                           const SizedBox(height: 5),
                           const Text(
                             'World Class Facilities',
@@ -91,7 +96,8 @@ class Admission_Screen extends StatelessWidget {
                             ),
                           ),
                           const Divider(thickness: 1.5),
-                          Image.asset('Images/success-story.jpg'),
+                          //Image.asset('Images/success-story.jpg'),
+                          const Get_Image(root: "", path: "success-story.jpg"),
                           const SizedBox(height: 5),
                           const Text(
                             'Success Stories',
@@ -108,7 +114,8 @@ class Admission_Screen extends StatelessWidget {
                             ),
                           ),
                           const Divider(thickness: 1.5),
-                          Image.asset('Images/campus-life.jpg'),
+                          //Image.asset('Images/campus-life.jpg'),
+                          const Get_Image(root: "", path: "campus-life.jpg"),
                           const SizedBox(height: 5),
                           const Text(
                             'Campus Life',
@@ -125,20 +132,22 @@ class Admission_Screen extends StatelessWidget {
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsets.only(left: 5, right: 5, bottom: 5),
+                            padding: const EdgeInsets.only(left: 5, right: 5, bottom: 15),
                             child: Container(
                               color: const Color(0xFF373737),
                               padding: const EdgeInsets.all(5),
                               child: Row(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Container(
-                                    height: 100,
-                                    width: 100,
-                                    decoration: const BoxDecoration(
-                                      image: DecorationImage(
-                                        image: AssetImage('Images/scholarship.jpg'),
-                                        scale: 0.1,
+                                  Center(
+                                    child: Container(
+                                      height: 100,
+                                      width: 100,
+                                      decoration: const BoxDecoration(
+                                        image: DecorationImage(
+                                          image: AssetImage('Images/scholarship.jpg'),
+                                          scale: 0.1,
+                                        ),
                                       ),
                                     ),
                                   ),
@@ -171,7 +180,6 @@ class Admission_Screen extends StatelessWidget {
                               ),
                             ),
                           ),
-                          const Divider(thickness: 1.5),
                           const Text(
                             'Fast Track Online Fee Payment Options',
                             style: TextStyle(
@@ -179,6 +187,7 @@ class Admission_Screen extends StatelessWidget {
                               fontWeight: FontWeight.w500,
                             ),
                           ),
+                          const Divider(thickness: 1.5),
                           Padding(
                             padding: const EdgeInsets.only(top: 10, bottom: 5),
                             child: Row(
@@ -216,86 +225,7 @@ class Admission_Screen extends StatelessWidget {
               ],
             ),
             const SizedBox(height: 15),
-            Container(
-              color: red_Color,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.all(5.0),
-                    child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          GestureDetector(
-                            onTap: ()=> launchURL('https://www.facebook.com/gehu.official/'),
-                            child: Image.asset(
-                              'Images/facebook.png',
-                              color: Colors.white,
-                              scale: 25,
-                            ),
-                          ),
-                          const SizedBox(width: 10),
-                          GestureDetector(
-                            onTap: ()=> launchURL('https://twitter.com/graphicerahill1'),
-                            child: Image.asset(
-                              'Images/twitter.png',
-                              color: Colors.white,
-                              scale: 25,
-                            ),
-                          ),
-                          const SizedBox(width: 10),
-                          GestureDetector(
-                            onTap: ()=> launchURL('https://www.linkedin.com/company/graphic-era-hilluniversity'),
-                            child: Image.asset(
-                              'Images/linkedin.png',
-                              color: Colors.white,
-                              scale: 25,
-                            ),
-                          ),
-                          const SizedBox(width: 15),
-                          GestureDetector(
-                            onTap: ()=> launchURL('https://www.youtube.com/GEHUDehradun'),
-                            child: Image.asset(
-                              'Images/youtube.png',
-                              color: Colors.white,
-                              scale: 25,
-                            ),
-                          ),
-                          const SizedBox(width: 15),
-                          GestureDetector(
-                            onTap: ()=> launchURL('https://www.instagram.com/graphicerahilluniversity/'),
-                            child: Image.asset(
-                              'Images/instagram.png',
-                              color: Colors.white,
-                              scale: 25,
-                            ),
-                          ),
-                          const SizedBox(width: 15),
-                          GestureDetector(
-                            onTap: ()=> launchURL('https://api.whatsapp.com/send?phone=+917617770113'),
-                            child: Image.asset(
-                              'Images/whatsapp.png',
-                              color: Colors.white,
-                              scale: 25,
-                            ),
-                          ),
-                        ]
-                    ),
-                  ),
-                  const Padding(
-                    padding: EdgeInsets.all(5.0),
-                    child: Text(
-                      'Graphic Era Hill University © 2022',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 8,
-                        fontWeight: FontWeight.w600,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
+            const Bottom_Bar(),
           ],
         ),
       ),

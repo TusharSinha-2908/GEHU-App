@@ -1,5 +1,9 @@
+import "dart:io";
 import 'package:flutter/material.dart';
 import 'package:GEHU/Constants.dart';
+import 'Bottom_Bar.dart';
+import 'Firebase Storage/Image_Constants.dart';
+
 
 class Academics_Screen extends StatelessWidget {
   static const String id = 'Academics Screen';
@@ -34,7 +38,8 @@ class Academics_Screen extends StatelessWidget {
             Stack(
               alignment: AlignmentDirectional.topStart,
               children: [
-                Image.asset('Images/academics.jpg'),
+                //Image.asset('Images/academics.jpg'),
+                const Get_Image(root: "", path: "academics.jpg"),
                 Padding(
                   padding: const EdgeInsets.only(left: 15, right: 15, top: 105),
                   child: Container(
@@ -99,18 +104,31 @@ class Academics_Screen extends StatelessWidget {
                                     crossAxisAlignment: CrossAxisAlignment.start,
                                     children: [
                                       PDF_Button(
+                                        text: 'Academic Calendar (Second Sem) Jan-June 2022',
+                                        onPress: () async{
+                                          await downloadFile('https://www.gehu.ac.in/content/dam/gehu/pdf/ad-aid/Academic%20Calender%20(Second%20Semester)%20Jan-June2022.pdf');
+                                        },
+                                      ),
+                                      const Divider(thickness: 1),
+                                      PDF_Button(
                                           text: 'Academic Calendar January-June 2022',
-                                          onPress: ()=>{},
+                                          onPress: () async{
+                                            await downloadFile('https://www.gehu.ac.in/content/dam/gehu/pdf/ad-aid/Academic%20Calendar%20Jan-June%202022.pdf');
+                                            },
                                           ),
                                       const Divider(thickness: 1),
                                       PDF_Button(
                                           text: 'July-December (III Sem.) 2021-2022',
-                                          onPress: ()=>{},
+                                          onPress: () async{
+                                            await downloadFile('https://www.gehu.ac.in/content/dam/gehu/pdf/ad-aid/Academic_Calendar_(Odd_Sem)_%20July_December_III_Semester-2021-22.pdf');
+                                          },
                                       ),
                                       const Divider(thickness: 1),
                                       PDF_Button(
                                           text:  'July-December (V Sem.) 2021-2022',
-                                          onPress: ()=>{},
+                                          onPress: () async{
+                                            await downloadFile('https://www.gehu.ac.in/content/dam/gehu/pdf/ad-aid/Academic_Calendar_Odd_Sem_%20July_December_Vth_VIIth_Semester-2021-22.pdf');
+                                          },
                                       ),
                                     ],
                                   ),
@@ -178,86 +196,7 @@ class Academics_Screen extends StatelessWidget {
               ],
             ),
             const SizedBox(height: 15),
-            Container(
-              color: red_Color,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.all(5.0),
-                    child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          GestureDetector(
-                            onTap: ()=> launchURL('https://www.facebook.com/gehu.official/'),
-                            child: Image.asset(
-                              'Images/facebook.png',
-                              color: Colors.white,
-                              scale: 25,
-                            ),
-                          ),
-                          const SizedBox(width: 10),
-                          GestureDetector(
-                            onTap: ()=> launchURL('https://twitter.com/graphicerahill1'),
-                            child: Image.asset(
-                              'Images/twitter.png',
-                              color: Colors.white,
-                              scale: 25,
-                            ),
-                          ),
-                          const SizedBox(width: 10),
-                          GestureDetector(
-                            onTap: ()=> launchURL('https://www.linkedin.com/company/graphic-era-hilluniversity'),
-                            child: Image.asset(
-                              'Images/linkedin.png',
-                              color: Colors.white,
-                              scale: 25,
-                            ),
-                          ),
-                          const SizedBox(width: 15),
-                          GestureDetector(
-                            onTap: ()=> launchURL('https://www.youtube.com/GEHUDehradun'),
-                            child: Image.asset(
-                              'Images/youtube.png',
-                              color: Colors.white,
-                              scale: 25,
-                            ),
-                          ),
-                          const SizedBox(width: 15),
-                          GestureDetector(
-                            onTap: ()=> launchURL('https://www.instagram.com/graphicerahilluniversity/'),
-                            child: Image.asset(
-                              'Images/instagram.png',
-                              color: Colors.white,
-                              scale: 25,
-                            ),
-                          ),
-                          const SizedBox(width: 15),
-                          GestureDetector(
-                            onTap: ()=> launchURL('https://api.whatsapp.com/send?phone=+917617770113'),
-                            child: Image.asset(
-                              'Images/whatsapp.png',
-                              color: Colors.white,
-                              scale: 25,
-                            ),
-                          ),
-                        ]
-                    ),
-                  ),
-                  const Padding(
-                    padding: EdgeInsets.all(5.0),
-                    child: Text(
-                      'Graphic Era Hill University © 2022',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 8,
-                        fontWeight: FontWeight.w600,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
+            const Bottom_Bar(),
           ],
         ),
       ),

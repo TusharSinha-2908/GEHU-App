@@ -1,6 +1,11 @@
+import 'dart:io';
+import 'package:dio/dio.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:image_downloader/image_downloader.dart';
+import 'package:path_provider/path_provider.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 const String college_Info = 'The Graphic Era Educational Society, established in 1993, is a non-profit organization that aims to mobilize world class education and generate resources for providing and supporting quality education for all. The society recognizes the right of every individual to lead a life of dignity and self-respect in a just and equitable manner. At the initial phase Graphic Era Society established in 1997 Graphic Era Institute of Technology. Graphic Era Institute of Technology had the distinction of being first Self- financed educational institute in North India, offer engineering courses The Institute was the culmination of the dream of its visionary founder Prof. (Dr) Kamal Ghanshala to change the destiny of thousands of youth by providing an excellent and holistic professional education. He had visualized an educational hub that would cater to academic aspirations of innumerable young man and women and his vision took a concrete shape in the form of Graphic Era Institute.';
@@ -56,6 +61,56 @@ Future<bool>saveImage(String url) async
     }
 
     return false;
+}
+
+
+Future<void> downloadFile(String url) async
+{
+  final String name = url.split('/').last;
+  // final appStorage = await getApplicationDocumentsDirectory();
+  final file = File('/storage/emulated/0/Download/$name');
+
+  final response = await Dio().get(
+      url,
+      options: Options(
+        responseType: ResponseType.bytes,
+        followRedirects: false,
+        receiveTimeout: 0,
+      ),
+  );
+
+  final raf = file.openSync(mode: FileMode.write);
+  raf.writeFromSync(response.data);
+  await raf.close();
+
+  if(file != null){
+    print( "PDF Saved Succesfully! Path : " + file.path);
+
+    Fluttertoast.showToast(
+      msg: 'PDF Downloaded Succesfully',
+      toastLength: Toast.LENGTH_SHORT,
+      gravity: ToastGravity.BOTTOM,
+      timeInSecForIosWeb: 1,
+      backgroundColor: Colors.black54,
+      textColor: Colors.white,
+    );
+
+  }
+
+  else{
+
+    print("Error While Saving PDF");
+
+    Fluttertoast.showToast(
+      msg: 'There Was An Error!\nCheck Your Network Connection.',
+      toastLength: Toast.LENGTH_SHORT,
+      gravity: ToastGravity.BOTTOM,
+      timeInSecForIosWeb: 1,
+      backgroundColor: Colors.black54,
+      textColor: Colors.white,
+    );
+
+  }
 }
 
 
