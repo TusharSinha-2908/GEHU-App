@@ -165,7 +165,7 @@ class Student_Area_Screen extends StatelessWidget {
                               children: [
                                 Button(text: 'Student\nInformation System ', onPress: () => launchURL('http://student.gehu.ac.in/')),
                                 const SizedBox(width: 10),
-                                Button(text: 'Notices And Updates', onPress: () => launchURL('http://nad.digilocker.gov.in/')),
+                                Button(text: 'Notices And Updates', onPress: () => launchURL('https://www.gehu.ac.in/content/gehu/en/notice-updates.html')),
                               ],
                             ),
                           ),
