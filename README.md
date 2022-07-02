@@ -1,4 +1,3 @@
-
 ![Logo](https://firebasestorage.googleapis.com/v0/b/gehu-67835.appspot.com/o/Logo.png?alt=media&token=e2fa6cfb-3376-4872-9fce-8138a984b8ae)
 
 # GEHU App - Mobile | Desktop | Web
