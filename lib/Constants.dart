@@ -164,7 +164,7 @@ class PDF_Button extends StatelessWidget {
             text,
             style: const TextStyle(
                 fontWeight: FontWeight.w600,
-                fontSize: 12
+                fontSize: 11
             ),
           ),
         ],

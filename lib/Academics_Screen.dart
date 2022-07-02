@@ -104,7 +104,7 @@ class Academics_Screen extends StatelessWidget {
                                     crossAxisAlignment: CrossAxisAlignment.start,
                                     children: [
                                       PDF_Button(
-                                        text: 'Academic Calendar (Second Sem) Jan-June 2022',
+                                        text: 'Academic Calendar(Second Sem) Jan-Jun',
                                         onPress: () async{
                                           await downloadFile('https://www.gehu.ac.in/content/dam/gehu/pdf/ad-aid/Academic%20Calender%20(Second%20Semester)%20Jan-June2022.pdf');
                                         },
