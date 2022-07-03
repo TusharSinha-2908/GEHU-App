@@ -1,15 +1,18 @@
-<p>
+<html>
 
-<a class="github-button" href="https://github.com/TusharSinha-2908/GEHU-App/subscription" data-icon="octicon-eye" data-size="large" data-show-count="true" aria-label="Watch TusharSinha-2908/GEHU-App on GitHub">Watch</a>
+<body>
 
-<a class="github-button" href="https://github.com/TusharSinha-2908/GEHU-App" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star TusharSinha-2908/GEHU-App on GitHub">Star</a>
+<!-- Place this tag where you want the button to render. -->
+<a class="github-button" href="https://github.com/TusharSinha-2908/GEHU-App/subscription" data-size="large" data-show-count="true" aria-label="Watch TusharSinha-2908/GEHU-App on GitHub">Watch</a>
 
-<a class="github-button" href="https://github.com/TusharSinha-2908/GEHU-App/fork" data-icon="octicon-repo-forked" data-size="large" data-show-count="true" aria-label="Fork TusharSinha-2908/GEHU-App on GitHub">Fork</a>
+<!-- Place this tag where you want the button to render. -->
+<a class="github-button" href="https://github.com/TusharSinha-2908/GEHU-App" data-size="large" data-show-count="true" aria-label="Star TusharSinha-2908/GEHU-App on GitHub">Star</a>
 
-<a class="github-button" href="https://github.com/TusharSinha-2908/GEHU-App/archive/HEAD.zip" data-icon="octicon-download" data-size="large" aria-label="Download TusharSinha-2908/GEHU-App on GitHub">Download</a>
+<!-- Place this tag where you want the button to render. -->
+<a class="github-button" href="https://github.com/TusharSinha-2908/GEHU-App/fork" data-size="large" data-show-count="true" aria-label="Fork TusharSinha-2908/GEHU-App on GitHub">Fork</a>
 
-</p>
-
+<!-- Place this tag where you want the button to render. -->
+<a class="github-button" href="https://github.com/TusharSinha-2908/GEHU-App/archive/HEAD.zip" data-size="large" aria-label="Download TusharSinha-2908/GEHU-App on GitHub">Download</a>
 
 
 <center>
@@ -166,5 +169,12 @@
 <a href="https://twitter.com/_he_was_there">
     <img src="https://img.shields.io/badge/twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white">
 </a>
+
+
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+</body>
+
+</html>
 
 
